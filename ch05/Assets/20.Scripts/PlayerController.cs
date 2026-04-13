@@ -9,16 +9,27 @@ public class PlayerCintroller : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))  // ; 제거
-        {
-            transform.Translate(-Speed, 0, 0);
-        }
+    //    void Update()
+    //    {
+    //        if (Input.GetKeyDown(KeyCode.LeftArrow))  
+    //        {
+    //            transform.Translate(-Speed, 0, 0);
+    //        }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))  // 오타 수정 + ; 제거
-        {
-            transform.Translate(Speed, 0, 0);
-        }
+    //        if (Input.GetKeyDown(KeyCode.RightArrow))
+    //        {
+    //            transform.Translate(Speed, 0, 0);
+    //        }
+    //    }
+    //}
+
+
+    public void LButtonDown()
+    {
+        transform.Translate(-Speed, 0, 0);
+    }
+    public void RbButtonDown()
+    {
+        transform.Translate(Speed, 0, 0);
     }
 }

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             - car.position.x;
 
         distance.text =
-            "Distance : " + length.ToString("F2") + "m";
+            "거리 : " + length.ToString("F2") + "m";
     }
 
 }
