@@ -3,6 +3,7 @@ using UnityEngine;
 public class ArrowController : MonoBehaviour
 {
     GameObject player;
+    GameObject director;
 
     float minDistance = 1.1f;
 
@@ -11,6 +12,7 @@ public class ArrowController : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
+        director = GameObject.Find("GameDirector");
     }
 
     void Update()
@@ -19,6 +21,7 @@ public class ArrowController : MonoBehaviour
 
         if (transform.position.y < -7)
         {
+            director.GetComponent<GameDirector>().DecreaseHP();
             Destroy(gameObject);
         }
 
@@ -28,6 +31,7 @@ public class ArrowController : MonoBehaviour
 
         if (distance < minDistance)
         {
+            director.GetComponent<GameDirector>().DecreaseHP();
             Destroy(gameObject);
         }
     }
