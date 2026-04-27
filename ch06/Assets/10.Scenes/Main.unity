@@ -623,6 +623,7 @@ GameObject:
   - component: {fileID: 1456469471}
   - component: {fileID: 1456469470}
   - component: {fileID: 1456469475}
+  - component: {fileID: 1456469476}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -826,8 +827,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   walkForce: 30
-  walkSprites: []
-  animationPeriod: 0.1
+--- !u!95 &1456469476
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456469469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1dad350979ce4c40bb0bfadb8055df4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1598531475
 PrefabInstance:
   m_ObjectHideFlags: 0

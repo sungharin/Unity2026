@@ -1,49 +1,36 @@
 using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
     float jumpForce = 300f;
     public float walkForce = 7f;
-    float walkmaxspeed = 1f;
-
-    public Sprite[] walkSprites;
-    public float animationPeriod = 0.1f;
-    float time = 0;
-    int idx = 0;
-    SpriteRenderer sr;
-
+    float maxWalkSpeed = 1f;
     Rigidbody2D rb;
+    Animator anim;
 
     void Start()
     {
         Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rb.AddForce(Vector2.up * jumpForce);
-
-            if (rb.linearVelocity.x < walkmaxspeed)
-            {
-                rb.AddForce(Vector2.right * walkForce);
-            }
+            rb.AddForce(transform.up * jumpForce);
         }
-
-        time += Time.deltaTime;
-
-        if (time > animationPeriod)
+        if (rb.linearVelocityX < maxWalkSpeed)
         {
-            time = 0;
-
-            if (walkSprites.Length > 0)
-            {
-                sr.sprite = walkSprites[idx];
-                idx = 1 - idx;
-            }
+            rb.AddForce(transform.right * walkForce);
+        }
+        if (rb.linearVelocityY != 0)
+        {
+            anim.SetBool("isJumping", true);
+        }
+        else
+        {
+            anim.SetBool("isJumping", false);
         }
     }
 
