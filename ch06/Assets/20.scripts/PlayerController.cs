@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     float jumpForce = 300f;
@@ -16,7 +17,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) &&
+            rb.linearVelocityY == 0)
         {
             rb.AddForce(transform.up * jumpForce);
         }
@@ -32,10 +34,18 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isJumping", false);
         }
+
+        if (transform.position.y < -8)
+        {
+            SceneManager.LoadScene(
+            SceneManager.GetActiveScene().name);
+            Debug.Log("실패");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        SceneManager.LoadScene("ClearScene");
         Debug.Log("성공");
     }
 }
