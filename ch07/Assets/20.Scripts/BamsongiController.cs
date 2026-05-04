@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BamsongiController : MonoBehaviour
+public class Bamsongicontroller : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,5 +12,11 @@ public class BamsongiController : MonoBehaviour
     public void Shoot(Vector3 dir)
     {
         GetComponent<Rigidbody>().AddForce(dir);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<ParticleSystem>().Play();
     }
 }
