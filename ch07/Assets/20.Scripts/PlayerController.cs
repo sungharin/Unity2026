@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float rotateSpeed = 100f;
