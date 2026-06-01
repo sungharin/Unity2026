@@ -6,9 +6,6 @@ TagManager:
   tags:
   - Apple
   - Bomb
-  - GoldenApple
-  - Star
-  - Heart
   layers:
   - Default
   - TransparentFX
