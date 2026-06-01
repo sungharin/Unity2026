@@ -7,22 +7,28 @@ public class TargetController : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("player");
-        tg = GameObject.FindObjectOfType<TargetGenerate>();
+        player = GameObject.Find("Player");
+        tg = FindObjectOfType<TargetGenerate>();
     }
 
     private void Update()
     {
-        transform.LookAt(player.transform);
+        if (player != null)
+        {
+            transform.LookAt(player.transform);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bamsongi"))
         {
-            tg.GenerateTarget();
+            if (tg != null)
+            {
+                tg.GenerateTarget();
+            }
+
             Destroy(gameObject);
         }
     }
 }
-
