@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Apple
   - Bomb
+  - GameOverPanel
+  - Golden Apple
+  - GoldenApple
+  - Heart
+  - Star
+  - RestartButton
   layers:
   - Default
   - TransparentFX
